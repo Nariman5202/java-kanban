@@ -8,15 +8,15 @@ public class Main {
         Epic epic1 = new Epic("Epic 1", "Description 1", 0, TaskStatus.NEW);
         Epic epic2 = new Epic("Epic 2", "Description 2", 0, TaskStatus.NEW);
 
-        Subtask subtask1 = new Subtask("Subtask 1", "Description 1", 0, TaskStatus.NEW, 0);
-        Subtask subtask2 = new Subtask("Subtask 2", "Description 2", 0, TaskStatus.NEW, 0);
-        Subtask subtask3 = new Subtask("Subtask 3", "Description 3", 0, TaskStatus.NEW, 0);
-
         manager.createTask(task1);
         manager.createTask(task2);
 
         manager.createEpic(epic1);
         manager.createEpic(epic2);
+
+        Subtask subtask1 = new Subtask("Subtask 1", "Description 1", 0, TaskStatus.NEW, epic1.getId());
+        Subtask subtask2 = new Subtask("Subtask 2", "Description 2", 0, TaskStatus.NEW, epic1.getId());
+        Subtask subtask3 = new Subtask("Subtask 3", "Description 3", 0, TaskStatus.NEW, epic2.getId());
 
         manager.createSubtask(subtask1);
         manager.createSubtask(subtask2);

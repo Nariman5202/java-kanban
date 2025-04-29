@@ -24,7 +24,6 @@ public class TaskManager {
         Epic epic = epics.get(subtask.getEpicId());
         if (epic != null) {
             epic.addSubtask(subtask);
-            epic.updateStatus();
         }
     }
 

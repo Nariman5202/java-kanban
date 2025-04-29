@@ -10,6 +10,7 @@ public class Epic extends Task {
 
     public void addSubtask(Subtask subtask) {
         subtasks.add(subtask);
+        updateStatus();
     }
 
     public List<Subtask> getSubtasks() {
@@ -27,5 +28,10 @@ public class Epic extends Task {
         } else {
             this.status = TaskStatus.IN_PROGRESS;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Epic{id=" + id + ", title='" + title + "', description='" + description + "', status=" + status + ", subtasks=" + subtasks + "}";
     }
 }
